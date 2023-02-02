@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VistaCompletarPartido">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        tools:ignore="MissingConstraints"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"/>
+
+    <TextView
+        android:id="@+id/tvLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:text="Local"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cantRojasLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/RojaLocal"
+        app:layout_constraintTop_toBottomOf="@+id/cantAmarillasLocal" />
+
+    <TextView
+        android:id="@+id/cantTirosLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="62dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tiros"
+        app:layout_constraintTop_toBottomOf="@+id/cantCornersLocal" />
+
+    <TextView
+        android:id="@+id/cantCornersLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/corners"
+        app:layout_constraintTop_toBottomOf="@+id/RojaLocal" />
+
+    <TextView
+        android:id="@+id/cantAmarillasVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/AmarillaVisitante"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolVisitante" />
+
+    <TextView
+        android:id="@+id/cantCornersVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/corners"
+        app:layout_constraintTop_toBottomOf="@+id/RojaVisitante" />
+
+    <TextView
+        android:id="@+id/cantTirosVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toBottomOf="@+id/cantCornersVisitante"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/tiros"
+        android:layout_marginStart="62dp"
+        android:textSize="22sp"/>
+
+    <TextView
+        android:id="@+id/cantRojasVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/RojaVisitante"
+        app:layout_constraintTop_toBottomOf="@+id/cantAmarillasVisitante" />
+
+    <TextView
+        android:id="@+id/tvVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="100dp"
+        android:text="Visitante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cantAmarillasLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/AmarillaLocal"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolLocal" />
+
+    <TextView
+        android:id="@+id/tvVersus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="8dp"
+        android:text="VS"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVisitante" />
+
+    <ImageView
+        android:id="@+id/imgEquipoLocal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
+        android:text="equipo"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocal" />
+
+    <TextView
+        android:id="@+id/tvPosesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posesion"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiros" />
+
+    <TextView
+        android:id="@+id/posesionLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="50%"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvPosesion"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiros" />
+
+    <ImageView
+        android:id="@+id/imgEquipoVisitante"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="70dp"
+        android:text="equipo2"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVisitante" />
+
+    <ImageView
+        android:id="@+id/AmarillaLocal"
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:background="#FFEB3B"
+        android:text="Amarilla"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolLocal" />
+    <ImageView
+        android:id="@+id/RojaLocal"
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:background="#FF0000"
+        android:text="Roja"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AmarillaLocal" />
+
+    <ImageView
+        android:id="@+id/AmarillaVisitante"
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:background="#FFEB3B"
+        android:text="Amarilla"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolVisitante" />
+
+    <TextView
+        android:id="@+id/corners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Corners"
+        android:textColor="#009688"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RojaVisitante" />
+
+    <ImageView
+        android:id="@+id/RojaVisitante"
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="70dp"
+        android:background="#FF0000"
+        android:text="Roja"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AmarillaVisitante"/>
+
+    <TextView
+        android:id="@+id/tiros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Tiros"
+        android:textSize="20sp"
+        android:textColor="#E500FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/corners" />
+
+    <TextView
+        android:id="@+id/tvGolLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="32dp"
+        android:text="0"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEquipoLocal" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="-"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvGolVisitante"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/tvGolLocal"
+        app:layout_constraintTop_toBottomOf="@+id/imgEquipoVisitante" />
+
+    <TextView
+        android:id="@+id/tvPosesionVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="50%"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPosesion"
+        app:layout_constraintTop_toBottomOf="@+id/tiros" />
+
+    <TextView
+        android:id="@+id/tvGolVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="120dp"
+        android:text="0"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEquipoVisitante" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

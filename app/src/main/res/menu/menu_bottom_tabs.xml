@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nuevo_partido"
+        android:icon="@drawable/ic_plus"
+        android:title="Partidos" />
+    <item
+        android:id="@+id/listado_partidos"
+        android:icon="@drawable/ic_registro"
+        android:title="Registro" />
+</menu>

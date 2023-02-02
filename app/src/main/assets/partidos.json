@@ -1,0 +1,224 @@
+{
+  "data": [
+    {
+      "amarillasLocal": 0,
+      "amarillasVisitante": 3,
+      "cornerLocal": 6,
+      "cornerVisitante": 2,
+      "equipoLocal": {
+        "nombre": "Unionistas",
+        "escudo": "https://www.unionistascf.com/wp-content/uploads/2018/10/Escudo_Unionistas_Salamanca_peq.png"
+      },
+      "equipoVisitante": {
+        "nombre": "Depor",
+        "escudo": "https://media.quincemil.com/imagenes/2019/08/20191850/BeFunky-collage-6-1024x738.jpg"
+      },
+      "golesLocal": 3,
+      "golesVisitante": 1,
+      "rojasLocal": 1,
+      "rojasVisitante": 0,
+      "tirosLocal": 4,
+      "tirosVisitante": 4,
+      "posesionLocal": 49,
+      "posesionVisitante": 51
+    },
+    {
+      "amarillasLocal": 0,
+      "amarillasVisitante": 2,
+      "cornerLocal": 10,
+      "cornerVisitante": 5,
+      "equipoLocal": {
+        "nombre": "Merida",
+        "escudo": "https://www.admerida.es/wp-content/uploads/2020/04/escudo-ad-merida.png"
+      },
+      "equipoVisitante": {
+        "nombre": "Cordoba",
+        "escudo": "https://viniloslowcost.es/7450/vinilo-escudo-cordoba-club-de-futbol.jpg"
+      },
+      "golesLocal": 1,
+      "golesVisitante": 0,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 4,
+      "tirosVisitante": 0,
+      "posesionLocal": 62,
+      "posesionVisitante": 38
+    },
+    {
+      "amarillasLocal": 1,
+      "amarillasVisitante": 2,
+      "cornerLocal": 7,
+      "cornerVisitante": 8,
+      "equipoLocal": {
+        "nombre": "Racing Ferrol",
+        "escudo": "https://racingclubferrol.net/wp-content/uploads/2016/07/register/escudo-racing-ferrol-269x300.png"
+      },
+      "equipoVisitante": {
+        "nombre": "Linares",
+        "escudo": "https://pbs.twimg.com/profile_images/1545871961439567872/h_OCnGzE_400x400.jpg"
+      },
+      "golesLocal": 2,
+      "golesVisitante": 3,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 2,
+      "tirosVisitante": 6,
+      "posesionLocal": 45,
+      "posesionVisitante": 55
+    },
+    {
+      "amarillasLocal": 1,
+      "amarillasVisitante": 0,
+      "cornerLocal": 7,
+      "cornerVisitante": 7,
+      "equipoLocal": {
+        "nombre": "Alcorcon",
+        "escudo": "https://1.bp.blogspot.com/-h-L6EOaJpoQ/WVPw9SpDVRI/AAAAAAABKII/A2IITPj05Q8t9OsexLa1DfNca2j8n_xtwCLcBGAs/s1600/AD%2BAlcorcon.png"
+      },
+      "equipoVisitante": {
+        "nombre": "SS Reyes",
+        "escudo": "https://ud-sanse.com/wp-content/uploads/2020/10/Escudo_UDSanse-copia.png"
+      },
+      "golesLocal": 2,
+      "golesVisitante": 2,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 4,
+      "tirosVisitante": 9,
+      "posesionLocal": 40,
+      "posesionVisitante": 60
+    },
+    {
+      "amarillasLocal": 2,
+      "amarillasVisitante": 3,
+      "cornerLocal": 10,
+      "cornerVisitante": 4,
+      "equipoLocal": {
+        "nombre": "Algeciras",
+        "escudo": "https://i.pinimg.com/originals/b8/86/ba/b886ba216282bf42def88d74a7eae3d6.png"
+      },
+      "equipoVisitante": {
+        "nombre": "Logroñes",
+        "escudo": "https://i.pinimg.com/originals/ba/30/1a/ba301a8f2fe1b652ac8e994e6c33c7ec.jpg"
+      },
+      "golesLocal": 1,
+      "golesVisitante": 3,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 3,
+      "tirosVisitante": 7,
+      "posesionLocal": 50,
+      "posesionVisitante": 50
+    },
+    {
+      "amarillasLocal": 0,
+      "amarillasVisitante": 1,
+      "cornerLocal": 2,
+      "cornerVisitante": 3,
+      "equipoLocal": {
+        "nombre": "Celta B",
+        "escudo": "https://i0.wp.com/sextoanillo.com/wp-content/uploads/2016/08/CELTA.jpg?fit=263%2C350&ssl=1"
+      },
+      "equipoVisitante": {
+        "nombre": "Badajoz",
+        "escudo": "https://image.ondacero.es/clipping/cmsimages02/2021/09/09/073C1645-8D5D-4D49-B086-A47A25B4C296/69.jpg?crop=1:1,smart&width=1200&height=1200&optimize=low&format=webply"
+      },
+      "golesLocal": 0,
+      "golesVisitante": 0,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 2,
+      "tirosVisitante": 1,
+      "posesionLocal": 65,
+      "posesionVisitante": 35
+    },
+    {
+      "amarillasLocal": 0,
+      "amarillasVisitante": 2,
+      "cornerLocal": 6,
+      "cornerVisitante": 3,
+      "equipoLocal": {
+        "nombre": "Pontevedra",
+        "escudo": "https://api.clupik.com/clubs/5889/seo/image.jpg"
+      },
+      "equipoVisitante": {
+        "nombre": "Talavera",
+        "escudo": "https://seeklogo.com/images/T/Talavera_CF-logo-86CA24B7BD-seeklogo.com.png"
+      },
+      "golesLocal": 4,
+      "golesVisitante": 1,
+      "rojasLocal": 0,
+      "rojasVisitante": 1,
+      "tirosLocal": 12,
+      "tirosVisitante": 2,
+      "posesionLocal": 67,
+      "posesionVisitante": 33
+    },
+    {
+      "amarillasLocal": 2,
+      "amarillasVisitante": 0,
+      "cornerLocal": 7,
+      "cornerVisitante": 7,
+      "equipoLocal": {
+        "nombre": "AD Ceuta",
+        "escudo": "https://i0.wp.com/www.ceutadeportiva.com/wp-content/uploads/2013/07/IMG_20552.jpg"
+      },
+      "equipoVisitante": {
+        "nombre": "Fuenlabrada",
+        "escudo": "https://www.infoatleti.es/img/escudos/es/fuenlabrada-big.png"
+      },
+      "golesLocal": 0,
+      "golesVisitante": 3,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 2,
+      "tirosVisitante": 9,
+      "posesionLocal": 39,
+      "posesionVisitante": 61
+    },
+    {
+      "amarillasLocal": 2,
+      "amarillasVisitante": 0,
+      "cornerLocal": 7,
+      "cornerVisitante": 7,
+      "equipoLocal": {
+        "nombre": "Linense",
+        "escudo": "https://i.pinimg.com/originals/40/17/fb/4017fbc139f6a7992d8b1ecad8cf30ba.png"
+      },
+      "equipoVisitante": {
+        "nombre": "Fuenlabrada",
+        "escudo": "https://www.infoatleti.es/img/escudos/es/fuenlabrada-big.png"
+      },
+      "golesLocal": 0,
+      "golesVisitante": 3,
+      "rojasLocal": 0,
+      "rojasVisitante": 0,
+      "tirosLocal": 2,
+      "tirosVisitante": 9,
+      "posesionLocal": 39,
+      "posesionVisitante": 61
+    },
+    {
+      "amarillasLocal": 2,
+      "amarillasVisitante": 0,
+      "cornerLocal": 7,
+      "cornerVisitante": 7,
+      "equipoLocal": {
+        "nombre": "Cordoba",
+        "escudo": "https://viniloslowcost.es/7450/vinilo-escudo-cordoba-club-de-futbol.jpg"
+      },
+      "equipoVisitante": {
+        "nombre": "Racing Ferrol",
+        "escudo": "https://racingclubferrol.net/wp-content/uploads/2016/07/register/escudo-racing-ferrol-269x300.png"
+      },
+      "golesLocal": 1,
+      "golesVisitante": 2,
+      "rojasLocal": 1,
+      "rojasVisitante": 0,
+      "tirosLocal": 5,
+      "tirosVisitante": 9,
+      "posesionLocal": 41,
+      "posesionVisitante": 59
+    }
+  ]
+}
