@@ -2,17 +2,23 @@ package com.utad.integrador
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.ProgressBar
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.utad.integrador.Adapter.PartidosAdapter
+import com.utad.integrador.api.ApiRest
 import com.utad.integrador.databinding.FragmentVistaListadoPartidosBinding
-import com.utad.integrador.model.Partido
-import com.utad.integrador.model.PartidosRespose
+import com.utad.integrador.model.Equipo
+import com.utad.integrador.model.Marcador
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -34,18 +40,32 @@ class VistaListadoPartidos : Fragment() {
         return view
     }
 
-    private lateinit var todos: PartidosRespose
-    private lateinit var partidosFiltrados: ArrayList<Partido>
+   // private lateinit var todos: PartidosRespose
+    private lateinit var partidosFiltrados: ArrayList<Marcador>
+    var data: ArrayList<Marcador> = ArrayList()
+    var listEquipos: ArrayList<Equipo> = ArrayList()
+    var loader: ProgressBar? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val json = readJsonFromFile("partidos.json")
-        todos = Gson().fromJson(json, PartidosRespose::class.java)
 
-        val myAdapter = PartidosAdapter(todos.data) {
+        callGetPartidos()
+        callGetEquipo()
+        loader = view.findViewById(R.id.progreso)
+       // val json = readJsonFromFile("partidos.json")
+        // todos = Gson().fromJson(json, PartidosRespose::class.java)
+
+        val myAdapter = PartidosAdapter(data, listEquipos) {
 
             val fragment = VistaDatosPartido()
             val bundle = Bundle()
             bundle.putSerializable("miPartido", it)
+            val x = it.equipoVisitante
+            val y = it.equipoLocal
+            val elocal = listEquipos.filter { it.id == y }.single()
+            val eVisitante = listEquipos.filter { it.id == x }.single()
+            bundle.putSerializable("local",elocal)
+            bundle.putSerializable("visitante",eVisitante)
+
             fragment.arguments = bundle
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.main_container, fragment)?.addToBackStack("VistaListadoPartidos")
@@ -69,13 +89,71 @@ class VistaListadoPartidos : Fragment() {
             if(filtroAplicado){
                 myAdapter.applyFilter(partidosFiltrados)
             } else {
-                myAdapter.applyFilter(todos.data)
+                myAdapter.applyFilter(data)
             }
 
             cerrarTeclado()
         }
     }
 
+    // Funcion para traer los equipos
+
+    private fun callGetEquipo() {
+        val call = ApiRest.service.getEquipos()
+        call.enqueue(object : Callback<List<Equipo>> {
+            override fun onResponse(call: Call<List<Equipo>>, response: Response<List<Equipo>>) {
+                val body = response.body()
+                if (response.isSuccessful && body != null) {
+                    Log.i("VistaNuevoPartido", body.toString())
+                    listEquipos.clear()
+                    listEquipos.addAll(body)
+                    Log.i("vistaListadoPartidos",listEquipos.toString())
+
+                } else {
+                    Log.e("VistaNuevoPartido", response.errorBody()?.string() ?: "error")
+                }
+
+                loader?.isVisible = false
+                //swipeRefreshLayout.isRefreshing = false
+            }
+
+            override fun onFailure(call: Call<List<Equipo>>, t: Throwable) {
+                Log.e("VistaNuevoPartido4", t.message.toString())
+                loader?.isVisible = false
+                // swipeRefreshLayout.isRefreshing= false
+            }
+
+        })
+    }
+
+    // Funcion para traer los partidos
+    private fun callGetPartidos() {
+        val call = ApiRest.service.getPartidos()
+        call.enqueue(object : Callback<List<Marcador>> {
+            override fun onResponse(call: Call<List<Marcador>>, response: Response<List<Marcador>>) {
+                val body = response.body()
+                if (response.isSuccessful && body != null) {
+                    Log.i("vistaListadoPartidos", body.toString())
+                    data.clear()
+                    data.addAll(body)
+                    Log.i("vistaListadoPartidos1", data.toString())
+
+                } else {
+                    Log.e("vistaListadoPartidos", response.errorBody()?.string() ?: "error")
+                }
+
+                //loader?.isVisible = false
+                //swipeRefreshLayout.isRefreshing = false
+            }
+
+            override fun onFailure(call: Call<List<Marcador>>, t: Throwable) {
+                Log.e("vistaListadoPartidos", t.message.toString())
+                // loader?.isVisible = false
+                // swipeRefreshLayout.isRefreshing= false
+            }
+
+        })
+    }
     /**
      * Funcion para cerrar el teclado
      */
@@ -89,10 +167,14 @@ class VistaListadoPartidos : Fragment() {
      * Aplicar filtro por equipos
      */
     private fun aplicarFiltro(equipo: String): Boolean {
+
         partidosFiltrados = arrayListOf()
+
         if (!(equipo == "")) {
-            for (partido in todos.data) {
-                if (partido.equipoLocal.nombre == equipo || partido.equipoVisitante.nombre == equipo) {
+            var idLocal: Equipo = listEquipos.filter { it.nombre == equipo }.single()
+            var idVisitante: Equipo = listEquipos.filter { it.nombre == equipo }.single()
+            for (partido in data) {
+                if (partido.equipoLocal == idLocal.id || partido.equipoVisitante == idVisitante.id) {
                     partidosFiltrados.add(partido)
                 }
             }
@@ -101,27 +183,5 @@ class VistaListadoPartidos : Fragment() {
         return false
     }
 
-
-    /**
-     * Leer JSON
-     */
-    private fun readJsonFromFile(fileName: String): String {
-        var json = ""
-        try {
-            val bufferedReader = BufferedReader(
-                InputStreamReader(activity?.assets?.open(fileName))
-            )
-            val paramsBuilder = StringBuilder()
-            var line: String? = bufferedReader.readLine()
-            while (line != null) {
-                paramsBuilder.append(line)
-                line = bufferedReader.readLine()
-            }
-            json = paramsBuilder.toString()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return json
-    }
 
 }

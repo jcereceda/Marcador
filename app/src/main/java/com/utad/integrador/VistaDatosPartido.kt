@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import com.utad.integrador.databinding.FragmentVistaDatosPartidoBinding
-import com.utad.integrador.model.Partido
+import com.utad.integrador.model.Equipo
+import com.utad.integrador.model.Marcador
 
 
 class VistaDatosPartido : Fragment() {
@@ -40,10 +40,11 @@ class VistaDatosPartido : Fragment() {
         }
 
         // Datos del partido
-        val partido: Partido = arguments?.getSerializable("miPartido") as Partido
-
-        Picasso.get().load(partido.equipoLocal.escudo).into(binding.imgEquipoLocal)
-        Picasso.get().load(partido.equipoVisitante.escudo).into(binding.imgEquipoVisitante)
+        val partido: Marcador = arguments?.getSerializable("miPartido") as Marcador
+        val equipoLocal: Equipo = arguments?.getSerializable("local") as Equipo
+        val equipoVisitante: Equipo = arguments?.getSerializable("visitante") as Equipo
+        Picasso.get().load(equipoLocal.escudo).into(binding.imgEquipoLocal)
+        Picasso.get().load(equipoVisitante.escudo).into(binding.imgEquipoVisitante)
 
         binding.tvGolLocal.text = partido.golesLocal.toString()
         binding.tvGolVisitante.text = partido.golesVisitante.toString()
